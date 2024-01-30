@@ -1,10 +1,21 @@
 import React from 'react';
 
 const WeatherComponent = ({ cityData }) => {
+  let descriptionStyle = cityData.description.replace(/ /g, '_')
+
+  if (descriptionStyle.includes('snow')){
+    descriptionStyle = 'snow'
+  } else if(descriptionStyle.includes('cloud')){
+    descriptionStyle = 'clouds'
+  } else if(descriptionStyle.includes('clear')){
+    descriptionStyle = 'clear'
+  } else if(descriptionStyle.includes('rain')){
+    descriptionStyle = 'rain'
+  }
 
   return (
     <div className='weather_page'>
-      <div className='weather_card' style={{ backgroundImage: `url("/images/${cityData.description.toLowerCase().replace(/ /g, '_')}.jpg")`}}>
+      <div className='weather_card' style={{ backgroundImage: `url("/images/${descriptionStyle}.jpg")`, backgroundSize: 'cover'}}>
         <img className='weather_icon' src={`http://openweathermap.org/img/w/${cityData.icon}.png`} alt="Weather Icon" />
         <p className='temp'>{cityData.temp}°C</p>
         <div className='city_country'>

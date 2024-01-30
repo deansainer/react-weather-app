@@ -14,7 +14,7 @@
 }
 
 .city_input{
-  width: 400px;
+  width: 300px;
   padding: 5px;
   border: 1px solid lightgrey;
   border-radius: 3px;
@@ -30,7 +30,7 @@
 }
 
 .form_label{
-  font-size: 60px;
+  font-size: 53px;
   margin: 10px;
 }
 
